@@ -12,3 +12,5 @@ Feature: Emre_US001_Api
     | 123-45-6049 | Emre20    | Sulukan6 | esulukan2 | es2@gmail.com | Emre.1235 |
     | 123-45-6040 | Emre3e    | Sulukan7 | esulukan3 | es3@gmail.com | Emre.1236 |
     | 123-45-6041 | Emre4e    | Sulukan8 | esulukan4 | es4@gmail.com | Emre.1237 |
+
+    # Scenario bitti
