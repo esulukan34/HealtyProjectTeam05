@@ -4,9 +4,11 @@ import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import utilities.Driver;
 
 public class Hooks {
+    static WebDriver driver;
     /*
    Cucumber'da Step definitions package'i icerisinde
    @before,@after gibi bir notasyon varsa
@@ -28,6 +30,12 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", "screenshots");
         }
         if (!scenario.isFailed()) Driver.closeDriver();
+    }
+    public static void quitDriver() { //quit Method
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
     }
 
 }
