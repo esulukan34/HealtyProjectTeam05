@@ -60,7 +60,11 @@ public class Page_04 {
     public WebElement myPages;
 
     @FindBy(xpath = "//*[text()='Make an Appointment'][1]")
-    public WebElement mAppointment;
+    public WebElement makeAppointment;
+
+    @FindBy(xpath = "//*[text()='My Appointments'][1]")
+    public WebElement myAppointments;
+
 
     @FindBy(css = "#phone")
     public WebElement phone;
@@ -83,6 +87,15 @@ public class Page_04 {
 
     @FindBy(css = "#password")
     public WebElement patientPassword;
+
+    @FindBy(css = "#fromDate")
+    public WebElement tarihBasla;
+
+    @FindBy(css = "#toDate")
+    public WebElement tarihBitir;
+
+    @FindBy(xpath = "//tr//td//span[1]")
+    public WebElement tarihFormat;
 
 
 }

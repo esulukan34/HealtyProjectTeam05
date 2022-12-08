@@ -8,6 +8,8 @@ import pages.Page_04;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import static org.junit.Assert.assertTrue;
+
 
 public class US025 {
     WebDriver driver;
@@ -82,7 +84,7 @@ public class US025 {
     }
     @Then("K4 MyAppointments butonuna tiklar")
     public void k4_my_appointments_butonuna_tiklar() {
-        page_04.mAppointment.click();
+        page_04.makeAppointment.click();
     }
     @Then("K4 Gecerli bir telefon numarasi girer")
     public void k4_gecerli_bir_telefon_numarasi_girer() {
@@ -90,18 +92,32 @@ public class US025 {
     }
     @Then("K4 Randevu icin tarih secer")
     public void k4_randevu_icin_tarih_secer() {
-        page_04.date.sendKeys("25.12.2022");
+        page_04.date.sendKeys("10.12.2022");
     }
+
     @Then("K4 Randevu tamamlamak icin SendAppointment tusuna basar")
     public void k4_randevu_tamamlamak_icin_send_appointment_tusuna_basar() {
         page_04.sendAppointment.click();
     }
-    @Then("K4 randevu alindigini onaylar")
-    public void k4_randevu_alindigini_onaylar() {
+
+    @Then("K4 randevu alindigini ve tarihin GG\\/AA\\/YYYY seklinde oldugunu dogrular")
+    public void k4_randevu_alindigini_ve_tarihin_gg_aa_yyyy_seklinde_oldugunu_dogrular() {
         //String actualData = page04.randevuOnayi.getText();
         //String expecData = "Appointment registration saved!";
         //assertTrue(actualData.contains(expecData));
-     }
+        page_04.myPages.click();
+        page_04.myAppointments.click();
+        ReusableMethods.waitFor(15);
+        page_04.tarihBasla.sendKeys("30.11.2022");
+        ReusableMethods.waitFor(15);
+        page_04.tarihBitir.sendKeys("14.12.2022");
+        ReusableMethods.waitFor(15);
+        String randevuTarih = "10.12.2022";
+        assertTrue(page_04.tarihFormat.getText().contains(randevuTarih));
+
+
+
+    }
 
 
 }
