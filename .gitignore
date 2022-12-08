@@ -2,5 +2,4 @@ target/
 .idea/
 .txt
 .jpg
-src/test/java/runners
 cucumber.properties
