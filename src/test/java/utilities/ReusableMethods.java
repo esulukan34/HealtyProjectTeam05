@@ -221,5 +221,36 @@ public class ReusableMethods {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+    public static String Tarih(){
+
+        date = LocalDateTime.now();
+        //DateTimeFormatter formater = DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm");
+        DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        tarih = date.format(formater);
+        return tarih;
+    }
+    public static String ileriTarih(){
+
+        date = LocalDateTime.now();
+        //DateTimeFormatter formater = DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm");
+        DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        tarih = date.plusDays(10).format(formater);
+        return tarih;
+    }
+    public static String gecmisTarih(){
+
+        date = LocalDateTime.now();
+        //DateTimeFormatter formater = DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm");
+        DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        tarih = date.minusDays(10).format(formater);
+        return tarih;
+    }
+    public static String saat(){
+
+        date = LocalDateTime.now();
+        DateTimeFormatter formater = DateTimeFormatter.ofPattern("HHmm");
+        tarih = date.format(formater);
+        return tarih;
+    }
 
 }

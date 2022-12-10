@@ -26,7 +26,7 @@ Feature: US25 hasta hesabı olusturup randevu alma
     *       K4 Gecerli bir telefon numarasi girer
     *       K4 Randevu icin tarih secer
     *       K4 Randevu tamamlamak icin SendAppointment tusuna basar
-    And     K4 randevu alindigini onaylar
+    And     K4 randevu alindigini ve tarihin GG/AA/YYYY seklinde oldugunu dogrular
 
 
 
