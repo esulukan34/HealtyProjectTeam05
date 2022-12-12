@@ -2,91 +2,106 @@ package stepDefinitions.apiSteps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import pojos.ContactPojo;
+import pojos.MessagePojo;
+import pojos.MessagePostPojo;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static utilities.Authentication.generateToken;
 
 public class US027 {
+    String url;
+    String url2;
+    MessagePostPojo expectedData;
+    MessagePojo expextedData2;
+    Response response;
+    Response response2;
 
-    Response responsePost;
-    Response responseGet;
-    ContactPojo expectedDataPost;
-    ContactPojo actualDataPost;
-    ContactPojo expectedDataGet;
-    ContactPojo actualDataGet;
+    @Given("md Kullanici post islemi icin endpoint olusturur")
+    public void md_kullanici_post_islemi_icin_endpoint_olusturur() {
 
-    @Given("md Kullanici token alip ileti olusturmak icin POST REQUEST yapar ve response alir")
-    public void md_kullanici_token_alip_ileti_olusturmak_icin_post_request_yapar_ve_response_alir() {
-
-        /*"email": "deneme2@deneme.com",
-        "message": "TestNG daha stabil calisiyor2",
-        "name": "testNG22",
-        "subject": "Hangi framework2"
-         */
-        expectedDataPost = new ContactPojo("deneme2@deneme.com","TestNG daha stabil calisiyor2","testNG22","Hangi framework2");
-        System.out.println("expectedData = " + expectedDataPost);
-
-        String url = "https://medunna.com/api/c-messages";
-        responsePost = given().headers("Authorization", "Bearer " + generateToken()).
-                contentType(ContentType.JSON).body(expectedDataPost).when().post(url);
-        responsePost.prettyPrint();
-
-
-    }
-    @Then("md Respons'larin dogrulamasini yapar")
-    public void md_respons_larin_dogrulamasini_yapar() {
-
-        actualDataPost = responsePost.as(ContactPojo.class);
-        System.out.println("actualData = " + actualDataPost);
-        assertEquals(201, responsePost.getStatusCode());
-        assertEquals(expectedDataPost.getEmail(),actualDataPost.getEmail());
-        assertEquals(expectedDataPost.getMessage(),actualDataPost.getMessage());
-        assertEquals(expectedDataPost.getName(),actualDataPost.getName());
-        assertEquals(expectedDataPost.getSubject(),actualDataPost.getSubject());
+        url = "https://medunna.com/api/c-messages";
 
     }
 
-    @Given("md Kullanici token alip ileti getirmek icin GET REQUEST yapar ve response alir\"")
-    public void md_kullanici_token_alip_ileti_getirmek_icin_get_request_yapar_ve_response_alir() {
-        /*
-        {"id": 364775,
-        "name": "testNG22",
-        "email": "deneme2@deneme.com",
-        "subject": "Hangi framework222",
-        "message": "TestNG daha stabil calisiyor222"
+    @When("md Kullanici post islemi icin expectedData olusturur")
+    public void md_kullanici_post_islemi_icin_expected_data_olusturur() {
 
-        {
-    "id": 364775,
-    "name": "testNG22",
-    "email": "deneme2@deneme.com",
-    "subject": "Hangi framework222",
-    "message": "TestNG daha stabil calisiyor222"
+        expectedData = new MessagePostPojo("weerr@hhjj.com", "Test NG daha stabil", "deneme deneme", "Cucumber");
+        System.out.println("expectedData = " + expectedData);
+
+    }
+
+    @When("md Kullanici token alip POST REQUEST yapar ve response alir")
+    public void md_kullanici_token_alip_post_request_yapar_ve_response_alir() {
+
+        response = given().headers("Authorization", "Bearer " + generateToken()).
+                contentType(ContentType.JSON).body(expectedData).when().post(url);
+
+        response.prettyPrint();
+
+    }
+
+    @Then("md Kullanici post islemi icin dogrulamalari yapar")
+    public void md_kullanici_post_islemi_icin_dogrulamalari_yapar() {
+
+        MessagePostPojo actualData = response.as(MessagePostPojo.class);
+        System.out.println("actualData = " + actualData);
+
+        assertEquals(201, response.getStatusCode());
+        assertEquals(expectedData.getEmail(), actualData.getEmail());
+        assertEquals(expectedData.getMessage(), actualData.getMessage());
+        assertEquals(expectedData.getName(), actualData.getName());
+        assertEquals(expectedData.getSubject(), actualData.getSubject());
+
+    }
+
+    @Given("md Kullanici get islemi icin endpoint olusturur")
+    public void md_kullanici_get_islemi_icin_endpoint_olusturur() {
+
+        url2 = "https://medunna.com/api/c-messages/376535";
+
+    }
+
+    @When("md Kullanici get islemi icin expectedData olusturur")
+    public void md_kullanici_get_islemi_icin_expected_data_olusturur() {
+
+        expextedData2 = new MessagePojo("deneme@deneme.com", 376535, "TestNG daha stabil calisiyor", "TestNG", "Framework");
+        System.out.println("expextedData2 = " + expextedData2);
+
+    }
+    /*
+{
+    "id": 376535,
+    "name": "TestNG",
+    "email": "deneme@deneme.com",
+    "subject": "Framework",
+    "message": "TestNG daha stabil calisiyor"
 }
+     */
 
-}     */
-        expectedDataGet = new ContactPojo(364775,"testNG22","deneme2@deneme.com","Hangi framework222","TestNG daha stabil calisiyor222");
-        System.out.println("expecteddataGet = " + expectedDataGet);
-
-        String url = "https://medunna.com/api/c-messages/364775";
-        responseGet = given().headers("Authorization", "Bearer " + generateToken()).when().get(url);
-        responseGet.prettyPrint();
+    @When("md Kullanici token alip GET REQUEST yapar ve response alir")
+    public void md_kullanici_token_alip_get_request_yapar_ve_response_alir() {
+        response2 = given().headers("Authorization", "Bearer " + generateToken()).when().get(url2);
+        response2.prettyPrint();
 
     }
-    @Then("md Respons'larin dogrulamasini yapar\\(getRequest)")
-    public void md_respons_larin_dogrulamasini_yapar_get_request() {
-        actualDataGet = responseGet.as(ContactPojo.class);
-        System.out.println("actualData = " + actualDataGet);
-        assertEquals(200,responseGet.getStatusCode());
-        assertEquals(expectedDataGet.getId(), actualDataGet.getId());
-        assertEquals(expectedDataGet.getName(), actualDataGet.getName());
-        assertEquals(expectedDataGet.getEmail(), actualDataGet.getEmail());
-        assertEquals(expectedDataGet.getSubject(), actualDataGet.getSubject());
-        assertEquals(expectedDataGet.getMessage(), actualDataGet.getMessage());
 
+    @Then("md Kullanici get islemi icin dogrulamalari yapar")
+    public void md_kullanici_get_islemi_icin_dogrulamalari_yapar() {
+        MessagePojo actualData2 = response2.as(MessagePojo.class);
+        System.out.println("actualData2 = " + actualData2);
+
+           assertEquals(200, response2.getStatusCode());
+           assertEquals(expextedData2.getMessage(),actualData2.getMessage());
+           assertEquals(expextedData2.getId(), actualData2.getId());
+           assertEquals(expextedData2.getName(), actualData2.getName());
+           assertEquals(expextedData2.getEmail(), actualData2.getEmail());
+           assertEquals(expextedData2.getSubject(), actualData2.getSubject());
+           assertEquals(expextedData2.getMessage(), actualData2.getMessage());
 
     }
 
