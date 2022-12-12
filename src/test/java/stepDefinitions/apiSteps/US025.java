@@ -61,11 +61,11 @@ public class US025 {
     public void k4_response_kayitlarini_dogrular() {
         expected = new Patient(370147,"Emre","Sulukan", "555-555-6060","esulukan@gmail.com");
 
-        assertEquals(expected.getId(),actualData.getId());
-        assertEquals(expected.getFirstName(),actualData.getFirstName());
-        assertEquals(expected.getLastName(),actualData.getLastName());
-        assertEquals(expected.getPhone(),actualData.getPhone());
-        assertEquals(expected.getEmail(),actualData.getEmail());
+        assertEquals(expected.getId(),          actualData.getId());
+        assertEquals(expected.getFirstName(),   actualData.getFirstName());
+        assertEquals(expected.getLastName(),    actualData.getLastName());
+        assertEquals(expected.getPhone(),       actualData.getPhone());
+        assertEquals(expected.getEmail(),       actualData.getEmail());
     }
 
 }
