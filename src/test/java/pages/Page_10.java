@@ -30,6 +30,14 @@ public class Page_10 {
     @FindBy( xpath="(//*[@class='dropdown-item'])[1]")
     public WebElement signInButton;
 
+    @FindBy( xpath="//*[@name='username']")
+    public WebElement username;
+
+    @FindBy( xpath="//*[@name='password']")
+    public WebElement password;
+
+    @FindBy( xpath="//button[@type='submit']")
+    public WebElement signIn;
     @FindBy( xpath="//*[text()='Adminz Adminy']")
     public WebElement adminName;
 
