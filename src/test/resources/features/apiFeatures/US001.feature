@@ -7,10 +7,9 @@ Feature: Emre_US001_Api
     And   K4 olusturdugu kisi bilgilerini dogrular
 
     Examples: test verileri
-    | SSN         | firstname | lastname | username  | email         | password  |
-    | 123-45-6048 | Emre10    | Sulukan5 | esulukan1 | es1@gmail.com | Emre.1234 |
-    | 123-45-6049 | Emre20    | Sulukan6 | esulukan2 | es2@gmail.com | Emre.1235 |
-    | 123-45-6040 | Emre3e    | Sulukan7 | esulukan3 | es3@gmail.com | Emre.1236 |
-    | 123-45-6041 | Emre4e    | Sulukan8 | esulukan4 | es4@gmail.com | Emre.1237 |
+    | SSN         | firstname | lastname | username  | email          | password   |
+    | 123-45-6048 | Emree1    | Sulukan5 | esulukan1 | ess1@gmail.com | Emres.1234 |
+    | 123-45-6049 | Emree2    | Sulukan6 | esulukan2 | ess2@gmail.com | Emres.1235 |
+    | 123-45-6040 | Emree3    | Sulukan7 | esulukan3 | ess3@gmail.com | Emres.1236 |
+    | 123-45-6041 | Emree4    | Sulukan8 | esulukan4 | ess4@gmail.com | Emres.1237 |
 
-    # Scenario bitti

@@ -1,5 +1,9 @@
 package utilities;
 
+import pojos.Country;
+import pojos.Registrant;
+import pojos.Room;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +14,9 @@ public class DatabaseUtility {
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
-
+    public static Room room;
+    public static Registrant registrant;
+    public static Country country;
     public static void createConnection() {
 //        String url = ConfigurationReader.getProperty("database_url");
 //        String user = ConfigurationReader.getProperty("database_user");
