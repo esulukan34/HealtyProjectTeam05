@@ -9,13 +9,12 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import pages.Page_05;
 import pojos.patientPojo.Patient;
-import stepDefinitions.uiSteps.US015;
 import utilities.*;
 
 import static io.restassured.RestAssured.given;
 import static utilities.Authentication.generateToken;
 
-public class US015api {
+public class US015 {
 
     Page_05 page = new Page_05();
 
@@ -50,7 +49,7 @@ public class US015api {
         System.out.println("url = " + url);
 
 
-        expectedData = new Patient(Integer.parseInt(id), US015.firstname, US015.lastname);
+        expectedData = new Patient(Integer.parseInt(id), stepDefinitions.uiSteps.US015.firstname, stepDefinitions.uiSteps.US015.lastname);
         System.out.println("expectedData = " + expectedData);
     }
 
