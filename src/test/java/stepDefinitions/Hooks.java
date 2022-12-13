@@ -29,16 +29,18 @@ public class Hooks {
         if (scenario.isFailed()) {
             scenario.attach(screenshot, "image/png", "screenshots");
         }
-        if (!scenario.isFailed()) Driver.closeDriver();
+        Driver.closeDriver();
+       // if (!scenario.isFailed()) Driver.closeDriver();
     }
-    public static void quitDriver() { //quit Method
-        if (driver != null) {
-            driver.quit();
-            driver = null;
-        }
+   //public static void quitDriver() { //quit Method
+   //    if (driver != null) {
+   //        driver.quit();
+   //        driver = null;
+   //    }
+
     }
 
-}
+
 
 
 
