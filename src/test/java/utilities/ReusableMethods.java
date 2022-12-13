@@ -10,12 +10,10 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.function.Function;
 
 public class ReusableMethods {
@@ -221,5 +219,117 @@ public class ReusableMethods {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+    public static String Tarih(){
 
+        date = LocalDateTime.now();
+        //DateTimeFormatter formater = DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm");
+        DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        tarih = date.format(formater);
+        return tarih;
+    }
+    public static String ileriTarih(){
+
+        date = LocalDateTime.now();
+        //DateTimeFormatter formater = DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm");
+        DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        tarih = date.plusDays(10).format(formater);
+        return tarih;
+    }
+    public static String gecmisTarih(){
+
+        date = LocalDateTime.now();
+        //DateTimeFormatter formater = DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm");
+        DateTimeFormatter formater = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        tarih = date.minusDays(10).format(formater);
+        return tarih;
+    }
+    public static String saat(){
+
+        date = LocalDateTime.now();
+        DateTimeFormatter formater = DateTimeFormatter.ofPattern("HHmm");
+        tarih = date.format(formater);
+        return tarih;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static String setTheDateByRandom (String format,int atMostYear, String direction)
+    {
+        int day = (int) (Math.random() * 366 + 1);
+        int month = (int) (Math.random() * 13 + 1);
+        int year = (int) (Math.random() * atMostYear + 1);
+        LocalDate date = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format);
+        direction = direction.toUpperCase(Locale.ROOT);
+        String dateF;
+        switch (direction) {
+            case "FEATURE":
+                date = date.plusYears(year).plusMonths(month).plusDays(day);
+                dateF = formatter.format(date);
+                return dateF;
+            case "PAST":
+                date = date.minusYears(year).minusMonths(month).minusDays(day);
+                dateF = formatter.format(date);
+                return dateF;
+            default:
+                dateF = formatter.format(date);
+                return dateF;
+        }
+    }
 }
