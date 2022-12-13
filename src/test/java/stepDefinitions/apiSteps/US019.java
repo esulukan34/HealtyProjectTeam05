@@ -73,4 +73,10 @@ public class US019 {
         assertEquals(databaseData.get("gender"), responseData.get("gender"));
         assertEquals(databaseData.get("phone"), responseData.get("phone"));
     }
+    @Given("K8 Admin {string} numarali Staff Kullanicisinin bilgilerine DELETE Request gonderir")
+    public void k8_admin_numarali_staff_kullanicisinin_bilgilerine_delete_request_gonderir(String id) {
+        spec.pathParams("first","staff");
+        response=given().spec(spec).headers("Authorization","Bearer "+ Authentication.generateToken()).when().delete("/{first}/"+id);
+       // response.prettyPrint();
+    }
 }
