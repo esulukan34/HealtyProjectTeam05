@@ -57,6 +57,36 @@ public class Page_07 {
     @FindBy (xpath = "//section[@id='contact']") public WebElement contactSayfasi;
     @FindBy (xpath = "//*[text()='Your message has been received']") public WebElement mesajIletildiYazisi;
     @FindBy (xpath = "//*[contains(text(),'Your message has been received')]") public WebElement mesajIletildiYazisiContains;
+    @FindBy (xpath = "//li[@id='entity-menu']") public WebElement itemTitlesMenu;
+    @FindBy (xpath = "//span[text()='Messages']") public WebElement messagesButton;
+   // @FindBy (xpath = "//tbody//tr[1]") public List<WebElement> mesajPortalFirstRowList;
+    @FindBy (xpath = "//tbody/tr[1]/td") public List<WebElement> mesajPortalFirstRowList;
+    @FindBy (xpath = "//tbody/tr[1]/td[5]") public WebElement mesajPortalMesajSutun5;
+    @FindBy (xpath = "//tbody/tr[1]/td[2]") public WebElement mesajPortalIsimSutun2;
+    @FindBy (xpath = "//tbody/tr[1]/td[5]") public WebElement mesajPortalEmailSutun3;
+    @FindBy (xpath = "//a[@id='jh-create-entity']") public WebElement createANewMessageButton;
+    @FindBy (xpath = "//input[@id='c-message-name']") public WebElement adminMessageNameBox;
+    @FindBy (xpath = "//input[@id='c-message-email']") public WebElement adminMessageEmailBox;
+    @FindBy (xpath = "//input[@id='c-message-subject']") public WebElement adminMessageSubjectBox;
+    @FindBy (xpath = "//input[@id='c-message-message']") public WebElement adminMessageYazBox;
+    @FindBy (xpath = "//button[@id='save-entity']") public WebElement messageSavedButton;
+    @FindBy (xpath = "//div[@role='alert']") public WebElement mesajCreatedText;
+    @FindBy (xpath = "//tbody//tr//td[1]") public List<WebElement> mesajIdListWE;
+    @FindBy (xpath = "//th[1]//*[name()='svg']") public WebElement mesajRefreshOk;
+    @FindBy (xpath = "//div[@role='alert']") public WebElement mesajUpdatedText;
+    @FindBy (xpath = "//button[@id='jhi-confirm-delete-cMessage']") public WebElement deleteButton2;
+
+    @FindBy (xpath = "//div[@role='alert']") public WebElement mesajDeletedText;
+
+
+
+
+
+
+
+
+
+
 
 
 

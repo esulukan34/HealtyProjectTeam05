@@ -9,4 +9,3 @@
       Examples: test verileri
         |query                 |columnName|
         |SELECT * FROM jhi_user|ssn       |
-        |SELECT * FROM jhi_user|date      |
