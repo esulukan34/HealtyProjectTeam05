@@ -3,5 +3,4 @@ target/
 .txt
 .jpg
 cucumber.properties
-/src/test/java/runners/TestRunner.java
-/src/test/java/runners/TestRunner2.java
+/src/test/java/runners
