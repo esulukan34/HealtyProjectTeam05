@@ -80,14 +80,35 @@ public class Page_10 {
     @FindBy( xpath="//*[@id='physician-examFee']")
     public WebElement phys_ExamFee;
 
-    @FindBy( xpath="//*[@id='file_image']")
+    @FindBy( css= "#file_image")
     public WebElement phys_AddImage;
 
     @FindBy( xpath="//*[text()='Save']")
     public WebElement phys_SaveButton;
 
-    @FindBy( xpath="//*[text()='User found with search SSN']")
-    public WebElement phys_FoundAlert;
+    @FindBy( xpath="//span[text()='001-01-0008']")
+    public WebElement SSN;
+    @FindBy( xpath="//span[text()='SSN']")
+    public WebElement SSN1;
 
+    @FindBy( xpath="//*[text()='001-01-0008']/following-sibling::td[8]/div/a[2]")
+    //@FindBy(xpath="//*[@href=\"/admin/user-management/team05ali/edit\"]")
+    public WebElement editButton;
+
+    @FindBy( xpath="//*[text()='Create or edit a user']")
+    public WebElement editPage;
+
+    @FindBy( xpath="//*[text()='001-01-0008']/following-sibling::td[8]/div/a[3]")
+    //@FindBy( xpath="//*[@href=\"/admin/user-management/team05ali/delete\"]")
+    public WebElement deleteButton;
+
+    @FindBy( xpath="//*[text()='Confirm delete operation']")
+    public WebElement deleteConfirmation;
+
+    @FindBy( xpath="//*[text()='Administration']")
+    public WebElement administrationButton;
+
+    @FindBy( xpath="//*[text()='User management']")
+    public WebElement userManagementButton;
 
 }
