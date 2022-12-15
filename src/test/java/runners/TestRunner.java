@@ -6,13 +6,18 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"html:target/cucumber-reports.html",
+        plugin = {"pretty",
+                "html:target/cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml"
         },
         features = "src/test/resources/features",
         glue = "stepDefinitions",
+<<<<<<< HEAD
         tags = "@US018_TC_005",       //2 tagi ayni anada calistirmak isterseniz "@gp1 or @gp2" seklinde yazariz
+=======
+        tags = "@US019-API-GetReq",       //2 tagi ayni anada calistirmak isterseniz "@gp1 or @gp2" seklinde yazariz
+>>>>>>> main
         dryRun = false
 )
 

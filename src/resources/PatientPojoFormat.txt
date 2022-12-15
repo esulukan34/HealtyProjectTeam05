@@ -1,0 +1,40 @@
+    "createdBy": "fayhan",
+    "createdDate": "2022-12-10T13:32:01.511842Z",
+    "id": 389234,
+    "firstName": "Romaguera",
+    "lastName": "Senger",
+    "birthDate": "1998-12-09T22:00:00Z",
+    "phone": "7472396633",
+    "gender": "FEMALE",
+    "bloodGroup": "Opositive",
+    "adress": "11897 Lang Brook, Meridethstad, UT 56140-6262",
+    "email": "kathern.grimes@hotmail.com",
+    "description": "feyzayhn",
+    "user": {
+        "createdBy": "team88_12admin",
+        "createdDate": "2022-07-15T19:38:40.886671Z",
+        "id": 123714,
+        "login": "enrico.fermi",
+        "firstName": "Enrico",
+        "lastName": "Fermi",
+        "email": "enrico.fermi@hotmail.com",
+        "activated": true,
+        "langKey": "tr",
+        "imageUrl": null,
+        "resetDate": "2022-07-15T19:38:40.885520Z",
+        "ssn": "545-63-9483"
+    },
+    "appointments": null,
+    "inPatients": null,
+    "country": {
+        "id": 1202,
+        "name": "Türkiyem"
+    },
+    "cstate": {
+        "id": 1333,
+        "name": "Isparta",
+        "country": {
+            "id": 1202,
+            "name": "Türkiyem"
+        }
+    }
