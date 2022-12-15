@@ -48,6 +48,16 @@ public class Physician {
         this.imageContentType = imageContentType;
     }
 
+    public Physician(String createdBy, String createdDate, int id, String firstName, String lastName, String birthDate, String phone) {
+        this.createdBy = createdBy;
+        this.createdDate = createdDate;
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+        this.phone = phone;
+    }
+
     public Physician() {
     }
 
