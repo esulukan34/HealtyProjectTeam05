@@ -6,7 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.interactions.Actions;
-import pages.Page_04;
+import pages.Page04;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 
 public class US025 {
 
-    Page_04 page_04 = new Page_04();
+    Page04 page04 = new Page04();
     String randevuTarih = "15.12.2022";
 
 
@@ -29,6 +29,7 @@ public class US025 {
         return date;
     }
      */
+
 
 
 /*
