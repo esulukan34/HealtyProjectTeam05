@@ -24,9 +24,9 @@ public class Appointments {
     private String description;
     private Physician physician;
     private Patient patient;
-    private Test []ctests;
+    private TestPojos2[]ctests;
 
-    public Appointments(String createdBy, String createdDate, Integer id, String startDate, String dateTime, String endDate, String status, String anamnesis, String treatment, String diagnosis, String prescription, String description, Physician physician, Patient patient, Test[] ctests) {
+    public Appointments(String createdBy, String createdDate, Integer id, String startDate, String dateTime, String endDate, String status, String anamnesis, String treatment, String diagnosis, String prescription, String description, Physician physician, Patient patient, TestPojos2[] ctests) {
         this.createdBy = createdBy;
         this.createdDate = createdDate;
         this.id = id;
@@ -159,11 +159,11 @@ public class Appointments {
         this.patient = patient;
     }
 
-    public Test[] getCtests() {
+    public TestPojos2[] getCtests() {
         return ctests;
     }
 
-    public void setCtests(Test[] ctests) {
+    public void setCtests(TestPojos2[] ctests) {
         this.ctests = ctests;
     }
 

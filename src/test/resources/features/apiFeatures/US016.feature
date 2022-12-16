@@ -8,8 +8,8 @@ Feature:US_016_Oda_Olusturma_Goruntuleme_Guncelleme_Silme(Admin)
     Then  K3 Admin oda icin Status "<code>" alir
     And   K3 Admin oda icin yaniti "<dogrulama>" yapar
     Examples:
-      |endpoint|istek|code|dogrulama|
-      |rooms|POST|201|Create|
-      |id|GET|200|Read|
-      |rooms|PUT|200|Update|
-      |id|DELETE|204|Delete|
+      | endpoint | istek  | code | dogrulama |
+      | rooms    | POST   | 201  | Create    |
+      | id       | GET    | 200  | Read      |
+      | rooms    | PUT    | 200  | Update    |
+      | id       | DELETE | 204  | Delete    |

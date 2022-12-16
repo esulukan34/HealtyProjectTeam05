@@ -103,8 +103,11 @@ public class Page_04 {
     @FindBy(css = "#toDate")
     public WebElement tarihBitir;
 
-    @FindBy(xpath = "//tr//td//span[1]")
+    @FindBy(xpath = "//tbody/tr[1]/td[3]/span")
     public WebElement tarihFormat;
+
+    @FindBy(xpath = "//*[@class='Toastify__toast-body']")
+    public WebElement alert;
 
 
 >>>>>>> bcc5063cd1bf808e68173881eb005536f1bc1a82

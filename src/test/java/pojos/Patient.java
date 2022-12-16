@@ -31,6 +31,7 @@ public class Patient {
         this.lastName = lastName;
         this.phone = phone;
         this.email = email;
+
     }
 
     public Patient(String createdBy, String createdDate, int id, String firstName, String lastName, String birthDate, String phone, String gender, String bloodGroup, String adress, String email, String description, Country country, InPatients[] inPatients, State cstate) {

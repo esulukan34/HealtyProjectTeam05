@@ -44,28 +44,35 @@ public class US025 {
     "cstate": null
 }
  */
-    Patient expected;
-    Response response;
     Patient actualData;
+    Response response;
+    Patient expectedData;
     @Given("K4 {int} id numarali hastanin tum bilgilerine get request gonderir")
     public void k4_id_numarali_hastanin_tum_bilgilerine_get_request_gonderir(Integer id) {
-        response = given().headers("Authorization","Bearer " + generateToken()).when().get("https://medunna.com/api/patients/"+id);
+        response = given().headers("Authorization", "Bearer " + generateToken()).when().get("https://medunna.com/api/patients/"+ id);
         response.prettyPrint();
         actualData = response.as(Patient.class);
+
     }
     @Then("K4 Status code {int} oldugu kontrol edilir")
     public void k4_status_code_oldugu_kontrol_edilir(int Statuscode) {
-        assertEquals(Statuscode,response.statusCode());
+        assertEquals(Statuscode,response.getStatusCode());
+
     }
+
     @Then("K4 response kayitlarini dogrular")
     public void k4_response_kayitlarini_dogrular() {
-        expected = new Patient(370147,"Emre","Sulukan", "555-555-6060","esulukan@gmail.com");
+        expectedData =  new Patient(370147,"Emre","Sulukan","555-555-6060","esulukan@gmail.com");
 
-        assertEquals(expected.getId(),          actualData.getId());
-        assertEquals(expected.getFirstName(),   actualData.getFirstName());
-        assertEquals(expected.getLastName(),    actualData.getLastName());
-        assertEquals(expected.getPhone(),       actualData.getPhone());
-        assertEquals(expected.getEmail(),       actualData.getEmail());
+        assertEquals(expectedData.getId(),actualData.getId());
+        assertEquals(expectedData.getFirstName(), actualData.getFirstName());
+        assertEquals(expectedData.getLastName(), actualData.getLastName());
+        assertEquals(expectedData.getPhone(), actualData.getPhone());
+        assertEquals(expectedData.getEmail(), actualData.getEmail());
+
+
+
     }
 
 }
+
