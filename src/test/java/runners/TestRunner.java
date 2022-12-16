@@ -13,11 +13,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-<<<<<<< HEAD
         tags = "@US018_TC_005",       //2 tagi ayni anada calistirmak isterseniz "@gp1 or @gp2" seklinde yazariz
-=======
-        tags = "@US019-API-GetReq",       //2 tagi ayni anada calistirmak isterseniz "@gp1 or @gp2" seklinde yazariz
->>>>>>> main
         dryRun = false
 )
 
