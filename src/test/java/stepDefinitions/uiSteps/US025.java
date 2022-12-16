@@ -4,7 +4,7 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import pages.Page_04;
+import pages.Page04;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 
 public class US025 {
     WebDriver driver;
-    Page_04 page_04 = new Page_04();
+    Page04 page_04 = new Page04();
     Actions actions = new Actions(Driver.getDriver());
 
 

@@ -17,8 +17,8 @@ Feature: Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir ol
     And A sayfayı kapatır
 
   Scenario Outline: : TC01A kullanici gecersiz bilgilerle giris yapılamadığını kontrol eder
-    Given kullanici Medunna sayfasina gider
-    When  Account menu butonu tiklanir
+    Given A kullanici Medunna sayfasina gider
+    When A Account menu butonu tiklanir
     Then A kullanıcı sıgn ın a tıklar
     When A kullacı 2 saniye bekler
     And A kullanıcı"<geçersizUsername>" username girer
@@ -32,7 +32,7 @@ Feature: Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir ol
       | Ahmet            |          1111    |
 
   Scenario: TC02 kullanıcı kimlik bilgilerini herzaman kullanabileceği Remember me seçeneği olmalıdır
-    Given kullanici Medunna sayfasina gider
+    Given A kullanici Medunna sayfasina gider
     When A kullacı 2 saniye bekler
     When A Account menu butonu tiklanir
     When A kullacı 2 saniye bekler
@@ -48,7 +48,7 @@ Feature: Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir ol
 
 
   Scenario:TC03 Eğer şifre unutulursa diye "Did you forget your password?" seçeneği olmalıdır
-    Given kullanici Medunna sayfasina gider
+    Given A kullanici Medunna sayfasina gider
     When A kullacı 2 saniye bekler
     When  A Account menu butonu tiklanir
     Then A kullanıcı sıgn ın a tıklar
@@ -60,7 +60,7 @@ Feature: Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir ol
 
 
   Scenario:TC04 "You don't have an account yet? Register a new account" seçeneği olmalıdır.
-    Given kullanici Medunna sayfasina gider
+    Given A kullanici Medunna sayfasina gider
     When A kullacı 2 saniye bekler
     When  A Account menu butonu tiklanir
     Then A kullanıcı sıgn ın a tıklar
@@ -72,7 +72,7 @@ Feature: Giriş sayfası yalnızca geçerli kimlik bilgileriyle erişilebilir ol
 
 
   Scenario:TC05 kullanıcı "Cancel" sçeneğini tıklar
-    Given kullanici Medunna sayfasina gider
+    Given A kullanici Medunna sayfasina gider
     When A kullacı 2 saniye bekler
     When  A Account menu butonu tiklanir
     Then A kullanıcı sıgn ın a tıklar

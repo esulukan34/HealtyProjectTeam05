@@ -4,14 +4,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
-import pages.Page_04;
+import pages.Page04;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class US001 {
 
-    Page_04 page_04 = new Page_04();
+    Page04 page_04 = new Page04();
 
     @Given("K4 Medunna sayfasina gider")
     public void kullanici_medunna_sayfasina_gider() {

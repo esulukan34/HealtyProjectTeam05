@@ -1,14 +1,23 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.awt.*;
 
-public class Page_04 {
-    public Page_04(){
+
+public class Page04 {
+    public Actions account;
+    public Label gecersizSsn;
+    public Actions ssn;
+    public WebElement gecersizRegister;
+    public Label requiredSsn;
+    public Actions register;
+
+    public Page04(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
     @FindBy (xpath="//*[@id='login-item']")
@@ -30,7 +39,7 @@ public class Page_04 {
 
 
     @FindBy(xpath = "//*[text() = 'Your FirstName is required.']")
-<<<<<<< HEAD
+
     public WebElement gecersizName;
     @FindBy (xpath = "//label[@class='form-check-label']")
     public WebElement Remem_me;
@@ -44,14 +53,14 @@ public class Page_04 {
     public WebElement Register_a_new_account;
     @FindBy (xpath = "//*[text()='Cancel']")
     public WebElement cancel;
-=======
+
     public WebElement requiredName;
 
     @FindBy(xpath = "//*[text()='Your LastName is required.']")
     public WebElement requiredLastname;
 
     @FindBy(css = "#username")
-    public WebElement username;
+    public WebElement Username;
 
     @FindBy(css = "#email")
     public WebElement email;
@@ -106,6 +115,26 @@ public class Page_04 {
     @FindBy(xpath = "//tr//td//span[1]")
     public WebElement tarihFormat;
 
+    @FindBy(xpath = "(//*[@class=\"d-flex align-items-center dropdown-toggle nav-link\"])[1]")
+    public WebElement MyPages;
+    @FindBy(xpath = "//span[text()='Search Patient']")
+    public WebElement SeachPatient;
 
->>>>>>> bcc5063cd1bf808e68173881eb005536f1bc1a82
+    @FindBy (xpath = "//input[@name=\"ssn\"]")
+    public WebElement SsnPatient;
+    @FindBy (xpath = "//button[@class='btn btn-primary']")
+    public WebElement SignBtn;
+    @FindBy (xpath = "//span[text()='MY PAGES']")
+    public WebElement Mypages;
+    @FindBy(xpath = "//li[@id=\"entity-menu\"]")
+    public WebElement mypg;
+
+    @FindBy(xpath = "//span[text()='Show Appointments']")
+    public WebElement ShowAppointmens;
+
+    @FindBy(xpath = "//span[text()='MY PAGES(PATIENT)']")
+    public WebElement MyPgesPateint;
+
+    @FindBy (xpath = "(//a[@class='dropdown-item'])[1]")
+    public WebElement MyAppointmensPatient;
 }

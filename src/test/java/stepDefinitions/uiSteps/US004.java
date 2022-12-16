@@ -5,18 +5,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
-import pages.Page_04;
+import pages.Page04;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
 public class US004 {
-    Page_04 page_04=new Page_04();
+    Page04 page_04=new Page04();
     Actions actions = new Actions(Driver.getDriver());
 
     @Given("{int} sn bekler")
@@ -138,7 +134,18 @@ public class US004 {
     }
 
 
+    @And("kullanıcı myPages ı tıklar")
+    public void kullanıcıMyPagesITıklar() {
 
+    }
+
+    @Given("A kullanici Medunna sayfasina gider")
+    public void a_kullanici_medunna_sayfasina_gider() {
+       {
+            Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
+        }
+
+    }
 
 }
 
