@@ -6,14 +6,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import pages.Page04;
+import pages.Page_04;
+import pages.Page_04;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 public class US024   {
 
-    Page04 page04 = new Page04();
+    Page_04 page04 = new Page_04();
     Actions actions = new Actions(Driver.getDriver());
 
     @When("K1 kullanıcı\\(patient) geçerli bir username girer")
