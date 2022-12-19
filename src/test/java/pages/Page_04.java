@@ -1,11 +1,20 @@
 package pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class Page_04 {
+
+    public WebElement mypg;
+    public WebElement ShowAppointmens;
+    public Actions MyAppointmensPatient;
+    public Actions SsnPatient;
+    public Actions SignBtn;
+    public Actions accountmenu;
+    public Actions SeachPatient;
 
     public Page_04(){
         PageFactory.initElements(Driver.getDriver(),this);
