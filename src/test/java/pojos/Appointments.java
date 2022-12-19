@@ -47,6 +47,12 @@ public class Appointments {
     public Appointments() {
     }
 
+    public Appointments(String createdBy, Integer id) {
+        this.createdBy = createdBy;
+        this.id = id;
+    }
+
+
     public String getCreatedBy() {
         return createdBy;
     }
