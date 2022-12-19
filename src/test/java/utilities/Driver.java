@@ -67,6 +67,13 @@ public class Driver {
         }
     }
 
+    public static void quitDriver(){
+        if (driver!=null){
+            driver.quit();
+            driver=null;
+        }
+    }
+
     public static void waitAndClick(WebElement element, int timeout) {
         for (int i = 0; i < timeout; i++) {
             try {
